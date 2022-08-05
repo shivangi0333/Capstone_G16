@@ -1,0 +1,102 @@
+<!-- Displaying the All the products -->
+<div class="card-top container-fluid">
+    <div class="container d-flex">
+
+        <div class="item">
+            <a (click)="filter('')">
+                <img style="width:100px;margin-top: 12px;"
+                    src="/assets/allproducts.jpg" alt="">
+                <h6>All Products</h6>
+            </a>
+        </div>
+
+        <!-- Displaying the home icon -->
+        <div class="item">
+            <a (click)="filter('Sofa')">
+                <img style="width:100px;margin-top: 12px;"
+                    src="/assets/sofa123.jpg"
+                    alt="">
+                <h6>Sofa</h6>
+            </a>
+        </div>
+        <!-- Displaying the grocery Icon -->
+        <div class="item">
+            <a (click)="filter('Tables')">
+                <img style="width:100px;margin-top: 12px;"
+                    src="/assets/table12.jpeg"
+                    alt="">
+                <h6> Dining Tables </h6>
+            </a>
+        </div>
+        <!-- Displaying the Fashion Icon -->
+        <div class="item">
+            <a (click)="filter('Fashion')">
+                <img style="width:100px;margin-top: 12px;"
+                    src="/assets/fashion.jpg"
+                    alt="">
+                <h6> Fashion </h6>
+            </a>
+        </div>
+         <!-- Displaying the Mobile Icon -->
+         <div class="item">
+            <a (click)="filter('Mobiles')">
+                <img style="width:100px;margin-top: 12px;"
+                    src="/assets/mobiles.jpg"
+                    alt="">
+                <h6>Mobiles </h6>
+            </a>
+        </div>
+          <!-- Displaying the Electronics Icon -->
+          <div class="item">
+            <a (click)="filter('Electronics')">
+                <img style="width:100px;margin-top: 12px;"
+                    src="/assets/electronics.jpg" alt="">
+                <h6> Electronics </h6>
+            </a>
+        </div>
+        <!-- Displaying the Appliances Icon -->
+        <div class="item">
+            <a (click)="filter('Appliances')">
+                <img style="width:100px;margin-top: 12px;"
+                    src="/assets/appliances.jpg"
+                    alt="">
+                <h6> Appliances </h6>
+            </a>
+        </div>
+        <!-- Displaying the Beauty Icon -->
+        <div class="item">
+            <a (click)="filter('Beauty')">
+                <img style="width:100px;margin-top: 12px;"
+                    src="/assets/beauty.jpg"
+                    alt="">
+                <h6> Beauty </h6>
+            </a>
+        </div>
+        <!-- Displaying the Sports Icon -->
+        <div class="item">
+            <a (click)="filter('Sports')">
+                <img style="width:100px;margin-top: 12px;"
+                    src="/assets/sports.jpg"
+                    alt="">
+                <h6> Sports </h6>
+            </a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <ng-container *ngFor="let product of filterCategory | filter:searchKey:'productName'">
+                <div class="card col-md-3">
+                    <img class="card-img-top" src='{{product.productUrl}}'>
+                    <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width:100ch;" align="center">
+                        {{product.productName}}</h5> 
+                    <h6 align="center"><strong>Price: </strong>{{product.productPrice}}</h6>
+                    <button  class="btn btn-outline-danger mx-5" (click)="handleAddToWishList(product.productId)" [disabled]="userService.isAdminLoggedIn()"><b>Add to WishList</b></button>
+                    <button class="btn btn-outline-warning mx-5" (click)="addtocart(product)" [disabled]="userService.isAdminLoggedIn()"><b>Add to Cart</b></button>
+
+
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div>

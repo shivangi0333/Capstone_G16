@@ -1,0 +1,4 @@
+productId,productName,productPrice,productStock,productDescription,productUrl,categoryType
+SPORT_1000,FootBall,500,15,FootBall For Playing,/assets/Football.png,7
+CLOCK_10,Clock,100,100,Clock,/assets/Clock.png,5
+Bangle_1,Bangles,50,100,Bangles,/assets/Bangles.jpg,2

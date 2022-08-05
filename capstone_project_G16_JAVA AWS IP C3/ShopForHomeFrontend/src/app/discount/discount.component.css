@@ -1,0 +1,10 @@
+.card{
+    width: 60%;
+    margin: 0 auto;
+    align-items: center;
+    background-color:white;
+    border-style: outset;
+    border-width: 50px;
+    border-radius: 30px;
+    border:#fff;
+}

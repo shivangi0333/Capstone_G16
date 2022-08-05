@@ -1,0 +1,33 @@
+<!-- Displaying the Title and required buttons -->
+<header>
+  <mat-toolbar>
+    <mat-toolbar-row>
+      <h1 style="text-align: center">Shop For Home</h1>
+    </mat-toolbar-row>
+    <mat-toolbar-row>
+      <button mat-raised-button style="margin-left:20px"  routerLink="userlogin" class="btn btn-outline-secondary" [disabled]="userService.isLoggedIn()">User</button>
+      <button mat-raised-button style="margin-left:20px"  routerLink="adminlogin" class="btn btn-outline-secondary" [disabled]="userService.isLoggedIn()">Admin</button>
+      <button mat-raised-button style="margin-left:20px"  routerLink="products" class="btn btn-outline-primary">Home</button>
+      <input type="text" class="form-control" [(ngModel)]="searchTerm" (keyup)="search($event)"
+      placeholder="Search Products">
+        <button mat-raised-button style="margin-right:20px" *ngIf="userService.isAdminLoggedIn()" routerLink="admin"
+          class="btn btn-outline-info" [disabled]="!userService.isAdminLoggedIn()">
+          <img src="/assets/setting.png" alt="img" class="png" />
+        </button>
+      <div>
+        <button mat-raised-button style="margin-right:20px" *ngIf="userService.isLoggedIn()" routerLink="wishlist"
+          class="btn btn-outline-warning" [disabled]="userService.isAdminLoggedIn()">Wishlist
+        </button>
+      </div>
+      <div>
+        <button mat-raised-button style="margin-right:20px" *ngIf="userService.isLoggedIn()" routerLink="cart"
+          class="btn btn-outline-info" [disabled]="userService.isAdminLoggedIn()">
+          <i style="font-size: 30px;" class="fas fa-cart-plus"></i>
+          <div style="font-size: 10px;" class="badge bg-danger"></div>
+        </button>
+      </div>
+      <a mat-raised-button style="margin-right:20px" class="nav-link" routerLink="" *ngIf="service.loggedIn()"
+        (click)="service.logoutUser()" color="warn">logout</a>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</header>

@@ -1,0 +1,36 @@
+
+    <div class="container">
+        <div class="card-table">
+            <div class="cart-product">
+                <table class="table table-responsive">
+                    <thead>
+                        <tr>
+                            <th>SI.No</th>
+                            <th>Product Name</th>
+                            <th>Product Image</th>
+                            <th>Price</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let productInOrder of page?.content; let i = index">
+                            <td>{{i+1}}</td>
+                            <td style="width:15% ;">{{productInOrder.product.productName }}</td>
+                            <td style="width: 10%;"><img class="card-img-top" src='{{productInOrder.product.productUrl}}' height=80px />
+                            </td>
+                            <td style="width:15% ;">{{productInOrder.product.productPrice | currency:'INR'}}
+                            </td>
+                            <td> 
+                                <button (click)="handleRemoveFromWishList(productInOrder.product.productId)" class="btn btn-danger"><i
+                                        class="fas fa-trash-alt"></i></button>
+                            </td>
+
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+   
+

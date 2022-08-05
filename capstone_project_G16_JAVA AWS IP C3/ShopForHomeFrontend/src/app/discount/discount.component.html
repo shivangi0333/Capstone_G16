@@ -1,0 +1,70 @@
+<!--<div class="card">
+    <h5>Add Discount Coupon Details</h5>
+    <form>
+        <label>Coupon Code</label><br />
+        <input type="text" name="code" placeholder="Enter coupon code"/><br />
+        <label>Password</label><br />
+        <input type="number" name="password" /><br /><br />
+        <button style="margin:5px;" type="submit" class="btn btn-primary">Upload discount</button>
+    </form>
+</div>-->
+<div class="card">
+<mat-card style="text-align: center">
+    <mat-card-title>Discount Coupon</mat-card-title>
+    <form #DiscountRef="ngForm" (ngSubmit)="storeDiscount(DiscountRef)">
+        <!-- Input for Coupon -->
+        <p>
+            <mat-form-field style="width:400px !important">
+                <input matInput type="text" name="dname" id="exampleInputDiscount" placeholder="Enter coupon code here" required
+                    ngModel />
+                <mat-error>Enter Coupon code</mat-error>
+            </mat-form-field>
+        </p>
+        <!-- Input for percent -->
+        <p>
+            <mat-form-field style="width:400px !important">
+                <input matInput type="number" name="dpercent" id="exampleInputPercent" placeholder="Enter discount percent here"
+                    required ngModel />
+                <mat-error>Enter Discount percent</mat-error>
+            </mat-form-field>
+        </p>
+        <button mat-raised-button class="btn btn-primary" color="accent" type="submit"
+            class="btn btn-primary" >uploadDiscount</button>
+    </form>
+</mat-card>
+<span style="color:rgb(16, 103, 8);font-size: 20px;">{{storeMsg}}</span>
+
+
+<div class="container">
+    <div class="card-table">
+        <div class="cart-product">
+            <table class="table table-responsive">
+                <thead>
+                    <tr>
+                        <th>SI.No</th>
+                        <th>Discount Coupon</th>
+                        <th>PDiscount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let discount of discounts ;let i = index">
+                        <td>{{i+1}}</td>
+                        <td style="width:15% ;">{{ discount.dname }}</td>
+                        <td style="width: 10%;">{{discount.dpercent}}</td>
+                        <td> 
+                            <button (click)="remove(discount)" class="btn btn-danger"><i
+                                    class="fas fa-trash-alt"></i></button>
+                        </td>
+
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+
+</div>

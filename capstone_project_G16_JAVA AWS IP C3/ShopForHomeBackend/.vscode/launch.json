@@ -1,0 +1,24 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-CapstoneShopFroHomeApplication<capstoneshopfrohome>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.wipro.capstoneshopfrohome.CapstoneShopFroHomeApplication",
+            "projectName": "capstoneshopfrohome",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-DiscountApplication<restcrud>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.greatlearning.Discount.DiscountApplication",
+            "projectName": "restcrud",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

@@ -1,0 +1,6 @@
+Sid,userName,productId,productName,date,quantity,discount,totalPrice,soldprice
+15,project,APPLIANCES_05,LG TV,2022-07-18 19:23:00.408,1,20,76000.00,60800.00
+16,project,APPLIANCES_06,Prestige Induction Stove,2022-07-18 19:23:00.579,1,20,6000.00,4800.00
+17,project,BEAUTY_01,Lipstick,2022-07-18 19:23:00.61,2,20,1000.00,800.00
+70,happy,ELECTRONICS_02,Oneplus Headphones,2022-07-19 10:12:24.239,1,20,1999.00,1599.20
+71,happy,APPLIANCES01,Voltas AC,2022-07-19 10:12:24.285,2,20,84000.00,67200.00
